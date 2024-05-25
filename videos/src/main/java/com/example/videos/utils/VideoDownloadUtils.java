@@ -17,7 +17,7 @@ import java.util.Objects;
 public class VideoDownloadUtils {
 
     public static Resource getVideoFileAsResource() throws IOException {
-        Path uploadDir = Paths.get("D:\\working\\Java Projects\\videos\\videos\\1MinVids");
+        Path uploadDir = Paths.get("./1MinVids");
 
         List<File> videoFiles = Arrays.stream(Objects.requireNonNull(uploadDir.toFile().listFiles())).toList();
 
@@ -25,7 +25,7 @@ public class VideoDownloadUtils {
 
         ZipUtils.zip(videoFiles);
 
-        Path zipFilePath = Paths.get("D:\\working\\Java Projects\\videos\\1MinVids.zip");
+        Path zipFilePath = Paths.get("./1MinVids.zip");
 
         return new UrlResource(zipFilePath.toUri());
     }
